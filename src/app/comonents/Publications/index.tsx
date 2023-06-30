@@ -1,5 +1,3 @@
-
-import { GetServerSideProps } from "next";
 import styles from "./Publication.module.scss";
 import Publication from "../Publication";
 import { useQuery } from '@apollo/client';
@@ -17,25 +15,25 @@ const Publications: React.FC<Props> = ({
   initialData,
   }) => {
   const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(false);
   const [charactersData, setCharactersData] = useState<CharactersData | null>(initialData);
-    const { loading, data, fetchMore } = useQuery<CharactersData>(GET_CHARACTERS, {
+    const { fetchMore } = useQuery<CharactersData>(GET_CHARACTERS, {
       variables: { page: 1 },
       onCompleted: (data) => {
         setCharactersData(data);
+        setLoading(false)
       },
     });
+
     const handleLoadMore = () => {
+      setLoading(true);
       fetchMore({
         variables: { page: page + 1 },
         updateQuery: updateQueryChars,
       });
       setPage(page + 1);
     }
-    // if (loading && !charData) return <p>Loading...</p>;
-    // console.log('charactersData', client.cache.readQuery({
-    //   query: GET_CHARACTERS,
-    //   variables: { page: 1 },
-    // }))
+
     return (
       <div className={styles.Publications}>
       <InputMain />
@@ -52,7 +50,7 @@ const Publications: React.FC<Props> = ({
         onClick={handleLoadMore}
         disabled={loading}
         >
-        Load more
+          {loading ? "Loading..." : "Load more"}
       </button>
     </div>
   );
