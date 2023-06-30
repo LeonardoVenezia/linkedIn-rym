@@ -1,0 +1,21 @@
+$backgroundColor: rgb(243, 242, 239);
+$backgroundColorLight: rgb(255, 255, 255);
+$lightBlack: rgba(0, 0, 0, 0.3);
+$grid: 1128px;
+
+$shadow: rgba(0, 0, 0, 0.02) 0px -1px 0px 1px, rgba(0, 0, 0, 0.1) 1px 4px 4px 0px;
+
+@mixin card {
+    background-color: $backgroundColorLight;
+    width: 100%;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: $shadow;
+    border: none;
+}
+
+@mixin button {
+    @include card;
+    padding: 8px 16px;
+    cursor: pointer;
+}

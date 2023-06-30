@@ -1,0 +1,18 @@
+@import "../../variables.scss";
+
+.Publication {
+    @include card;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    .imgContainer {
+        height: 200px;
+        width: 100%;
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+        .img {
+            object-fit: cover;
+            object-position: center 30%;
+        }
+    }
+}

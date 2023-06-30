@@ -1,0 +1,20 @@
+.AcordionList {
+    list-style: none;
+    animation: slideDown .1s ease-in-out forwards;
+    
+    .list::before {
+        content: '- ';
+    }
+}
+
+@keyframes slideDown {
+    from {
+        margin-top: 0;
+        line-height: 18px;
+    }
+
+    to {
+        margin-top: 20px;
+        line-height: 24px;
+    }
+}

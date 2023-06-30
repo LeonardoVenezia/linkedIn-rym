@@ -1,0 +1,8 @@
+@import "../../variables.scss";
+
+.Publications {
+    margin-bottom: 32px;
+    .loadMore {
+        @include button;
+    }
+}

@@ -1,0 +1,26 @@
+@import "../../variables.scss";
+
+.Actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .buttonContainer {
+
+        .button {
+            display: flex;
+            align-items: center;
+            background-color: transparent;
+            border: none;
+            height: 48px;
+            cursor: pointer;
+
+            .text {
+                color: $lightBlack;
+                margin-left: 8px;
+                font-size: 14px;
+                font-weight: 600;
+            }
+        }
+    }
+}

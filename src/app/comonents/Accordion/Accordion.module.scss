@@ -1,0 +1,7 @@
+@import "../../variables.scss";
+
+.Accordion {
+    .button {
+        @include button;
+    }
+}

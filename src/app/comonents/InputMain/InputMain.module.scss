@@ -1,0 +1,27 @@
+@import "../../variables.scss";
+
+.InputMain {
+    @include card;
+    padding: 8px 16px;
+    box-sizing: border-box;
+    margin-bottom: 12px;
+
+    .topContainer {
+        display: flex;
+        align-items: center;
+
+        .img {
+            margin-right: 8px;
+            border-radius: 50%;
+        }
+
+        .input {
+            height: 48px;
+            box-sizing: border-box;
+            padding: 10px;
+            border-radius: 24px;
+            width: 100%;
+            border: 1px solid $lightBlack;
+        }
+    }
+}

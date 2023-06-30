@@ -1,0 +1,7 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" role="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="video-medium" type="video"><defs><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="video-medium" data-supported-dps="24x24" fill="#000000" fill-opacity="0.9">
+  <path d="M19 4H5a3 3 0 00-3 3v10a3 3 0 003 3h14a3 3 0 003-3V7a3 3 0 00-3-3zm-9 12V8l6 4z" fill-opacity="0.9"></path>
+</svg></defs>
+<!---->    
+
+    <use href="#video-medium" width="24" height="24" stroke-opacity="0" stroke="#000000" fill-opacity="0" fill="#000000"></use>
+</svg>

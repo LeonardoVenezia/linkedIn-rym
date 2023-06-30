@@ -1,5 +1,7 @@
 import './globals.css'
+import styles from './layout.module.scss';
 import { Inter } from 'next/font/google'
+import Image from 'next/image'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,7 +17,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <header className={styles.header}>
+          <div className={styles.headerContainer}>
+            <Image
+              src="/icons/logo.svg"
+              width={41}
+              height={41}
+              alt="Linkedin logo"
+            />
+          </div>
+        </header>
+        {children}
+      </body>
     </html>
   )
 }

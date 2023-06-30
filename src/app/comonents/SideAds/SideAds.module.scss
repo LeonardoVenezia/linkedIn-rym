@@ -1,0 +1,14 @@
+@import "../../variables.scss";
+
+.SideAds {
+
+    .card {
+        @include card;
+        height: 500px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+        &.secondCard {
+            height: 250px;
+        }
+    }
+}
