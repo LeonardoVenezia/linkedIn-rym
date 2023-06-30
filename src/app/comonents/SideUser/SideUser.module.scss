@@ -5,4 +5,32 @@
     height: 500px;
     margin-bottom: 16px;
     box-sizing: border-box;
+    padding: 0;
+    overflow: hidden;
+    .imgContainer {
+        position: relative;
+        height: 56px;
+        .profilePhotoCont {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            top: 16px;
+            .profilePhoto {
+                z-index: 20;
+                border-radius: 50%;
+                border: 1px solid #fff;
+            }
+        }
+    }
+    .name {
+        margin-top: 52px;
+        text-align: center;
+    }
+    .description {
+        font-size: 12px;
+        color: $lightBlack2;
+        padding: 0 12px;
+        text-align: center;
+    }
 }

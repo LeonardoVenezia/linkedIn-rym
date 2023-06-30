@@ -5,7 +5,6 @@ export const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-
 export const GET_CHARACTERS = gql`
   query GetCharacters($page: Int!) {
     characters(page: $page) {
@@ -29,3 +28,17 @@ export const GET_CHARACTERS = gql`
     }
   }
 `;
+
+export const updateQueryChars = (prevResult, { fetchMoreResult }) => {
+  if (!fetchMoreResult) return prevResult;
+  const results = [
+    ...prevResult.characters.results,
+    ...fetchMoreResult.characters.results,
+  ];
+  return {
+    characters: {
+      __typename: 'Characters',
+      results,
+    },
+  };
+}

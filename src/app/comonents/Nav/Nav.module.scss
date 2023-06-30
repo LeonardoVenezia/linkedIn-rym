@@ -1,0 +1,19 @@
+.Nav {
+    display: flex;
+    align-items: center;
+    .button {
+        background-color: transparent;
+        border: none;
+        width: 80px;
+
+        .img {
+            border-radius: 50%;
+        }
+
+        .text {
+            text-align: center;
+            font-size: 12px;
+            margin-block-start: 0;
+        }
+    }
+}

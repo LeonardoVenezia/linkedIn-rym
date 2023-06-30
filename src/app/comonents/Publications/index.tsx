@@ -3,7 +3,7 @@ import styles from "./Publication.module.scss";
 import Publication from "../Publication";
 import { useQuery } from '@apollo/client';
 import { useState } from "react";
-import { GET_CHARACTERS } from "../../services/feedServices";
+import { GET_CHARACTERS, updateQueryChars } from "../../services/feedServices";
 import InputMain from "../InputMain";
 import Separator from "../Separator";
 import { type CharactersData, type Result } from "@/app/types";
@@ -17,19 +17,7 @@ const Publications: React.FC = () => {
   const handleLoadMore = () => {
     fetchMore({
       variables: { page: page + 1 },
-      updateQuery: (prevResult, { fetchMoreResult }) => {
-        if (!fetchMoreResult) return prevResult;
-        const results = [
-          ...prevResult.characters.results,
-          ...fetchMoreResult.characters.results,
-        ];
-        return {
-          characters: {
-            __typename: 'Characters',
-            results,
-          },
-        };
-      },
+      updateQuery: updateQueryChars,
     });
     setPage(page + 1);
   }
@@ -40,7 +28,7 @@ const Publications: React.FC = () => {
       <InputMain />
       <Separator />
       {
-        data?.characters.results.map((c: Result, index) => {
+        data?.characters.results.map((c: Result, index: number) => {
           return (
             <Publication data={c} key={index} />
           )

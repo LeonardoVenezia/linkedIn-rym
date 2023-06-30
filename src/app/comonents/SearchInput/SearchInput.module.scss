@@ -1,0 +1,21 @@
+@import "../../variables.scss";
+
+.SearchInput {
+    display: flex;
+    background-color: $grey;
+    margin-left: 8px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    .search {
+        margin-left: 16px;
+    }
+    .input {
+        border: none;
+        border-radius: 0 8px 8px 0;
+        background-color: transparent;
+        padding: 4px;
+        margin-left: 8px;
+        width: 220px;
+    }
+}

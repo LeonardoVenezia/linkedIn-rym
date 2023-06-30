@@ -10,7 +10,6 @@ interface Props {
 }
 
 const Accordion: React.FC<Props> = ({ text, data }) => {
-  console.log("b;", JSON.stringify(data))
   const [openIndex, setOpenIndex] = useState(false);
 
   return (
